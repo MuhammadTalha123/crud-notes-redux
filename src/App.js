@@ -1,11 +1,20 @@
 import React from 'react';
-import './App.css';
+import { Provider } from 'react-redux';
+import store from './redux/createStore';
+import InputSection from './components/InputSection';
+import NotesSection from './components/NotesSection';
+import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World!</h1>
-    </div>
+    <Provider store={store}>
+      <div className="container">
+        <h1>My Notes</h1>
+        <InputSection />
+        <div className="line"></div>
+        <NotesSection />
+      </div>
+    </Provider>    
   );
 }
 
